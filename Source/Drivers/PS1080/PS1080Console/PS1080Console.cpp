@@ -137,7 +137,7 @@ bool byebye(openni::Device& /*Device*/, vector<string>& /*Command*/)
 	return false;
 }
 
-bool Version(openni::Device& Device, vector<string>& /*Command*/)
+bool Version222(openni::Device& Device, vector<string>& /*Command*/)
 {
 	openni::Status rc = Device.getProperty(XN_MODULE_PROPERTY_VERSION, &g_DeviceVersion);
 	if (rc != openni::STATUS_OK)
@@ -1673,7 +1673,7 @@ int main(int argc, char **argv)
 	}
 
 	vector<string> DummyCommand;
-	Version(Device, DummyCommand);
+	Version222(Device, DummyCommand);
 
 	RegisterCB("exit", &byebye, "Exit interactive mode");
 	RegisterMnemonic("bye", "exit");
@@ -1694,7 +1694,7 @@ int main(int argc, char **argv)
 	RegisterCB("script", &Script, "Run in batch mode");
 	RegisterMnemonic("-s", "script");
 
-	RegisterCB("Version", &Version, "Get version");
+	RegisterCB("Version", &Version222, "Get version");
 
 	RegisterCB("FileList", &FileList, "Get File List");
 	RegisterMnemonic("dir", "FileList");
