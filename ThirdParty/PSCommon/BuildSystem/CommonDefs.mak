@@ -1,3 +1,10 @@
+export ALLOW_WARNINGS = 1
+export ARM_STAGING=/opt/hisi-linux/x86-arm/arm-hisiv100-linux/target/
+export ARM_CXX=arm-hisiv100nptl-linux-g++
+export PLATFORM=Arm
+
+
+
 ifndef _COMMON_DEFS_MAKE_
 _COMMON_DEFS_MAKE_=1
 
