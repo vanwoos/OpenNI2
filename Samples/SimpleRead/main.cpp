@@ -27,7 +27,7 @@
 
 using namespace openni;
 
-int main()
+int main(int argc,char ** argv)
 {
 	Status rc = OpenNI::initialize();
 	if (rc != STATUS_OK)
@@ -37,7 +37,12 @@ int main()
 	}
 
 	Device device;
-	rc = device.open(ANY_DEVICE);
+	if(argc>1){
+		rc=device.open(argv[1]);
+	}else{
+		rc = device.open(ANY_DEVICE);
+	}
+	
 	if (rc != STATUS_OK)
 	{
 		printf("Couldn't open device\n%s\n", OpenNI::getExtendedError());
